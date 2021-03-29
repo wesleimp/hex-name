@@ -24,7 +24,6 @@ defmodule HexName.CLI do
 
   defp print(:available), do: print(:available, :green)
   defp print(:unavailable), do: print(:unavailable, :light_red)
-  defp print(:unknown), do: print(:unknown)
   defp print(:version), do: IO.puts("hex-name v#{@version}")
 
   defp print(:help) do
