@@ -4,6 +4,7 @@ defmodule HexName.CLI do
   @strict [help: :boolean, version: :boolean]
   @aliases [h: :help, v: :version]
   @version "0.1.0"
+
   def main(args) do
     case OptionParser.parse(args, strict: @strict, aliases: @aliases) do
       {_, [package], _} ->
@@ -23,6 +24,7 @@ defmodule HexName.CLI do
 
   defp print(:available), do: print(:available, :green)
   defp print(:unavailable), do: print(:unavailable, :light_red)
+  defp print(:unknown), do: print(:unknown)
   defp print(:version), do: IO.puts("hex-name v#{@version}")
 
   defp print(:help) do
